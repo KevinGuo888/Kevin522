@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input id="start" type="button" value="开始">
+    <input id="pause" type="button" value="暂停">
+    <script>
+        const oStart=document.getElementById('start')
+        const oPause=document.getElementById('pause') 
+        const colorBox=['red','blue','yellow','blueviolet','darkgreen']
+        let timer;
+        let index=0;
+        oStart.onclick=()=>{
+            clearInterval(timer)  //清除前一个定时器，保证单独性
+            timer=setInterval(()=>{
+                document.body.style.background=colorBox[index++%colorBox.length] 
+            },200)
+        }
+        oPause.onclick=()=>{
+            clearInterval(timer)
+        }
+    </script>
+</body>
+</html>
