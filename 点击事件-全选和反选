@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox" checked="true">
+    <input type="checkbox">
+    <input type="checkbox">
+    <div id='allSelect'>全选</div>
+    <div id='reSelect'>反选</div>
+    <script>
+       // 选择元素的 触发器和渲染器
+       let allSelect = document.getElementById('allSelect') //触发器触发全选按钮
+       let reSelect = document.getElementById('reSelect')  //触发器触发反选按钮
+       let aInput = document.getElementsByTagName('input')  //渲染器
+       //为触发器绑定事件
+       //全选
+       allSelect.onclick = function(){
+           //为渲染器做渲染
+           for(let i=0;i<5;i++){          //用for循环遍历
+                aInput[i].checked = true;
+           }
+       }
+       //反选，给出判断只需将真的变为假即可
+       reSelect.onclick = function(){
+            for(let j=0;j<5;j++){
+                //方法一：用编程语言中的if判断方式
+                //先找到aInput[j].checkked，判定如果aInput[j].checkked为真
+                /*if(aInput[j].checked===true){
+                    //将aInput[j].checkked为真是变成假
+                    aInput[j].checked = false;
+                }else{
+                    //否则属性为假的变成真
+                    aInput[j].checked = true;
+                }*/
+            //方法二：用编程语言中的取反的方式
+            aInput[j].checked = !aInput[j].checked 
+            }
+       }
+    </script>
+</body>
+</html>
