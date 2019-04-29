@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=['1','5','5','9','9','8','8']
+        console.log(fn(arr))
+        function fn(oldArr){
+            let newArr=[oldArr[0]]
+            for(let i=1;i<oldArr.length;i++){
+                //每次外循环开始的时候都将这个开关设置成true（默认认为没有比较前每个元素都应该被添加进去）
+                let flag=true;
+                for(let j=0;j<newArr.length;j++){
+                    //只要旧数组的当前元素等于新数组的某个元素
+                    if(oldArr[i]===newArr[j]){
+                       // 就将这个开关设置成false，标示oldArr[i]这个数字是重复值
+                        flag=false;
+                    }
+                }
+                if(flag){
+                    newArr.push(oldArr[i])
+                }
+            }
+            return newArr;
+        }
+    </script>
+</body>
+</html>
