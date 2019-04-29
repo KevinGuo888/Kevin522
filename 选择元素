@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='d01'>1</div>
+    <div id='d02'>2</div>
+    <div id='d03'>3</div>
+    <script>
+        let sDiv = document.getElementsByTagName('div') //getElementById指根据id拿到元素，getElementsByTagName指根据标签名拿到元素们（注意s）
+        for(let i=0;i<3;i++){   //长度为3，从0开始循环3次
+            console.log(sDiv)
+            sDiv[i].style.background='red' //获取sDiv里面的i里面的style里面的background
+        }
+    </script>
+</body>
+</html>
