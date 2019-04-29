@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 300px;
+            border: 1px solid blue;
+            color: red;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <input id="start" type="button" value="开始">
+    <input id="pause" type="button" value="暂停">
+    <input id="back" type="button" value="返回">
+    <div id="result"></div>
+    <script>
+        let [oStart,oPause,oBack,oRerult] = [document.getElementById('start'),document.getElementById('pause'),
+        document.getElementById('back'),document.getElementById('result')]
+        let str = '由于操作失误，给前任朋友圈点了个赞，不一会，他就发来消息：想不到你还关注着我，今天下午我有空，约吗？'
+        let i = 0;
+        let timer = null;
+        oStart.onclick = () => {
+            clearInterval(timer)
+            timer = setInterval(() => {
+                oRerult.innerHTML = str.substring(0,++i)
+                if(i === str.length){
+                    clearInterval(timer)
+                }
+            },100)
+        }
+        oBack.onclick = () => {
+            clearInterval(timer)
+            timer = setInterval(() => {
+                oRerult.innerHTML = str.substring(0,--i)
+            },100)
+        }
+        if(i === 0){
+                    clearInterval(timer)
+                }
+        oPause.onclick = () => {
+            clearInterval(timer)
+        }
+    </script>
+</body>
+</html>
