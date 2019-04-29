@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 50px;
+            height: 50px;
+            background: pink;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <ul id='container'>
+
+    </ul>
+    <script>
+        const oUl = document.getElementById('container') //选择元素
+        const row = 5;          //方便统一修改
+        const col = 10;         //方便统一修改
+        const em = 51;          //方便统一修改
+        const color = 'blue';   //方便统一修改
+        //渲染
+        for(let i=0; i<row; i++){         //i的最大值决定该图像有多少列，i当前值决定了某个li的tleft
+            for(let j=0 ;j<col ;j++){     //j的最大值决定该图像有多少行，j当前值决定了某个li的top
+                //每次循环添加创建一个li
+                oUl.innerHTML += `<li style='left:${j*em}px;top:${i*em}px;background:${color}'></li>`
+            }
+        }
+        
+    </script>
+</body>
+</html>
