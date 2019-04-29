@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: none;
+        }
+        input.active{
+            background: red;
+        }
+        div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+        <input class="active" type="button" value="上证指数">
+        <input type="button" value="深圳成交">
+        <input type="button" value="创业板指">
+        <div class="active">
+            <span>第一块内容</span>
+            <p>大美女过来了</p>
+        </div>
+        <div>
+            <span>第二块内容</span>
+            <p>小美女</p>
+        </div>
+        <div>
+            <span>第三块内容</span>
+            <p>大丑女别过来</p>
+        </div>
+    
+    <script>
+        //选择元素
+        const aInput = document.getElementsByTagName('input')
+        const aDiv = document.getElementsByTagName('div')
+        //绑定事件
+        for(let i=0;i<aInput.length;i++){
+            aInput[i].onclick = function(){
+                for(let j=0;j<aInput.length;j++){
+                    aInput[j].className = ''   //变白所有按钮
+                    aDiv[j].className = ''   //隐藏所有的div
+                }
+                aInput[i].className = 'active'  //变红当前被点击的按钮
+                aDiv[i].className = 'active'    //显示当前被点击的按钮对应的div
+            }
+        }
+    </script>
+</body>
+</html>
