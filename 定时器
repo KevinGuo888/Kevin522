@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定时器语法：setTimeout(callback,time)，注：callback是一个回调函数，time是设定时间
+        setTimeout(()=>{       //一次性定时器
+            console.log('你好,这是一个一次性定时器，打开之后2秒会输出这句话')
+        },2000)
+        
+
+        setInterval(()=>{     //循环定时器
+            console.log('你好，这是个循环定时器，3秒就会输出一次这句话')
+        },3000)
+    </script>
+</body>
+</html>
