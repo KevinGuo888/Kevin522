@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=scr, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #d01{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id='d01'></div>
+    <script>
+        let div = document.getElementById('d01') //选择元素
+        /*
+        * 为元素绑定事件
+        * 触发器.on加上要触发的事件名称=function(){
+        *   这个花括号里是一个函数体，触发器触发事件的时候运行
+        * }
+        */
+        //鼠标进入触发变色
+        div.onmouseover = function(){
+            div.style.background = 'rebeccapurple'
+        }
+        //鼠标离开触发变色
+        div.onmouseout = function(){
+            div.style.background = 'greenyellow'
+        }
+    </script>
+</body>
+</html>
