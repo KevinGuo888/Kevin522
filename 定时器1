@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="start" type="button" value="开始">
+    <input id="stop" type="button" value="结束">
+    <script>
+        let oStart=document.getElementById('start')
+        let oStop=document.getElementById('stop')
+        let i=0;
+        let timer
+        oStart.onclick=()=>{
+            timer=setInterval(()=>{
+                console.log(++i)
+                
+            },1000)
+        }
+        oStop.onclick=()=>{
+            clearInterval(timer)
+
+        }
+    </script>
+</body>
+</html>
